@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
@@ -14,6 +15,7 @@ public class typingTutor implements KeyListener {
 		frame.setVisible(true);
 		label = new JLabel();
 		label.setText(currentLetter + "");
+		frame.add(label);
 		frame.addKeyListener(this);
 	}
 
@@ -33,18 +35,29 @@ public class typingTutor implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-
+	
+e.getKeyChar();
+if(currentLetter==e.getKeyChar()) {
+	System.out.println("correct");
+ frame.setBackground(Color.green);
+}
+else {
+	System.out.println("incorrect");
+	frame.setBackground(Color.red);
+}
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+System.out.println("You typed"+" "+currentLetter);
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-
+currentLetter = generateRandomLetter();
+label.setText(currentLetter+"");
 	}
 }
