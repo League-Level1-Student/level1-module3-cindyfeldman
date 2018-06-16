@@ -44,26 +44,60 @@ System.out.println("Hello and welcome.");
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-System.out.println(mouseX+mouseY);
+System.out.println(mouseX);System.out.println(mouseY);
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 int secretLocationX = 22;
+   	 int secretLocationY = 51;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-
+JOptionPane.showInputDialog("Ask a Question");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+   		  AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
 
    		 // 11. Use the pause() method below to wait until your music has finished
 
    		 // 12. Insert your completed Magic 8 ball recipe (http://bit.ly/Zdrf6d) here
-
-   	 }
+   		  
+ 	 }
 
     }
+    public class Magic8Ball {
+
+		// 1. Make a main method that includes all the steps below….
+public static void main(String[] args) {
+	
+int	r = new Random().nextInt(4);
+		// 2. Make a variable that will hold a random number and put a random number into this variable using "new Random().nextInt(4)"
+
+		// 3. Print out this variable
+	System.out.println(r);
+		// 4. Get the user to enter a question for the 8 ball
+String question = JOptionPane.showInputDialog("enter a question");
+		// 5. If the random number is 0
+		// -- tell the user "Yes"
+if(r==0) {
+	JOptionPane.showMessageDialog(null, "yes");
+}
+		// 6. If the random number is 1
+else if(r==1) {
+	JOptionPane.showMessageDialog(null, "no");
+}
+		// -- tell the user "No"
+else if(r==2)
+		// 7. If the random number is 2
+JOptionPane.showMessageDialog(null, "Maybe you should ask google");
+		// -- tell the user "Maybe you should ask Google?"
+if(r==3) {
+	JOptionPane.showMessageDialog(null, "ask your mom");
+}
+		// 8. If the random number is 3
+
+		// -- write your own answer
+}
+	}
 
     private boolean areClose(int mouseX, int secretLocationX) {
    	 return mouseX < secretLocationX + 15 && mouseX > secretLocationX - 15;
