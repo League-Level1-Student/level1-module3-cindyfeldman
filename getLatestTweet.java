@@ -34,7 +34,10 @@ public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	JButton buttonPressed = (JButton) e.getSource();
 	if(buttonPressed==search) {
-		System.out.println();
+		System.out.println("Tweet Tweet");
+	}
+	else {
+		System.out.println("");
 	}
 }
 }
